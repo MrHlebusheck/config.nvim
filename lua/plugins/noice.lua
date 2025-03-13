@@ -1,9 +1,9 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  lazy=true;
+  lazy = true,
   opts = {
-    lsp={progress={enabled=false}}
+    lsp = { progress = { enabled = false } }
   },
   dependencies = {
     "MunifTanjim/nui.nvim",
@@ -12,11 +12,10 @@ return {
       config = function()
         require("notify").setup {
           render = "minimal",
-          timeout = 250,
+          timeout = 250
         }
         vim.notify = require('notify')
       end
     }
   }
 }
-

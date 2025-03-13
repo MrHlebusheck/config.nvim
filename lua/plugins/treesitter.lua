@@ -1,7 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
-    'windwp/nvim-ts-autotag',
     'hiphish/rainbow-delimiters.nvim',
     {
       'windwp/nvim-autopairs',
@@ -15,7 +14,6 @@ return {
     auto_install = true,
     highlight = { enable = true },
     indent = { enable = true },
-    autotag = { enable = true }
   },
   config = function(_, opts)
     require('nvim-treesitter.configs').setup(opts)
