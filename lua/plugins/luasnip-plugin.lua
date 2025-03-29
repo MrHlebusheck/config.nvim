@@ -22,5 +22,6 @@ return {
     end, { silent = true })
 
     require("snippets.python")()
+    require("snippets.c")()
   end
 }

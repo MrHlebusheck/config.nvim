@@ -1,6 +1,7 @@
 return {
   jdtls = false,
   pylsp = false,
+  bashls = false,
   lua_ls = false,
   ts_ls = false,
   html = false,

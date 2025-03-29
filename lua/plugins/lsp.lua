@@ -44,6 +44,13 @@ return {
       }
     end
 
+    if lspSettings.bashls then
+      -- bash-language-server
+      lspconfig.bashls.setup({
+        capabilities = capabilities
+      })
+    end
+
     if lspSettings.lua_ls then
       -- lua-language-server
       lspconfig.lua_ls.setup({
