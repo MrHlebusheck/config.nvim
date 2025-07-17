@@ -50,7 +50,7 @@ map('n', '<leader>nn', ':lua vim.wo.relativenumber = not vim.wo.relativenumber<c
 
 map('t', '<esc>', [[<C-\><C-n>]], hide)
 map('t', 'jk', [[<C-\><C-n>]], hide)
-map('n', '<leader>tt', ":ToggleTerm<cr>", hide)
+map('n', '<leader>tt', ":ToggleTerm direction=float<cr>", hide)
 
 map('n', '<leader>bb', ":DapToggleBreakpoint<cr>", hide)
 map('n', '<F5>', ":DapContinue<cr>", hide)
