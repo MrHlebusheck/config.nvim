@@ -9,7 +9,6 @@ return {
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     require("mason").setup()
     local mason_lspconfig = require("mason-lspconfig")
-    mason_lspconfig.setup()
 
     capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
