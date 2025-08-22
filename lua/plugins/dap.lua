@@ -19,5 +19,6 @@ return {
     end
 
     require("debaggers.cpp")(dap)
+    require("debaggers.python")(dap)
   end,
 }
