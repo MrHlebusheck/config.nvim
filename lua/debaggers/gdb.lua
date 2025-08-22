@@ -1,5 +1,8 @@
+-- Docker args: --cap-add=SYS_PTRACE --security-opt seccomp=unconfined
+-- Shell cmd: sudo sysctl -w kernel.yama.ptrace_scope=0
+
 local config_dir = require("additions.config_dir")
-local cfg_path = ".nvim/c.json"
+local cfg_path = ".nvim/gdb.json"
 
 local default_adapter_cfg = {
   type = "executable",
