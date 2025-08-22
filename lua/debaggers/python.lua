@@ -32,41 +32,49 @@ return function(dap)
     local cfg = config_dir.read_json(cfg_path)
     local dbg = cfg.debugger
     if dbg then
-      dap.adapters.python = function(cb)
-        if dbg.request == 'attach' then
+      dap.adapters.python = function(cb, cfg)
+        if cfg.request == 'attach' then
           cb({
             type = "server",
-            port = dbg.port or default_adapter_cfg.port,
-            host = dbg.host or default_adapter_cfg.host,
+            port = cfg.connect.port,
+            host = cfg.connect.host,
             options = dbg.options or default_adapter_cfg.options,
           })
         else
           cb({
             type = "executable",
-            command = dbg.command or default_adapter_cfg.command,
+            command = cfg.pythonPath,
             args = dbg.args or default_adapter_cfg.args,
             options = dbg.options or default_adapter_cfg.options,
           })
         end
       end
 
-      dap.configurations.python = { {
-        type = default_cfg.type,
-        request = dbg.request or default_cfg.request,
-        name = default_cfg.name,
-        program = dbg.program or default_cfg.program,
-        pythonPath = dbg.pythonPath or default_cfg.pythonPath,
-        connect = {
-          host = dbg.host or default_adapter_cfg.host,
-          port = dbg.port or default_adapter_cfg.port,
+      dap.configurations.python = {
+        {
+          type = default_cfg.type,
+          request = "launch",
+          name = "Launch file",
+          program = dbg.program or default_cfg.program,
+          pythonPath = dbg.pythonPath or default_cfg.pythonPath,
         },
-        pathMappings = {
-          {
-            localRoot = "${workspaceFolder}",
-            remoteRoot = ".",
+        {
+          type = default_cfg.type,
+          request = "attach",
+          name = "Connect to the remote debugger",
+          program = dbg.program or default_cfg.program,
+          pythonPath = dbg.pythonPath or default_cfg.pythonPath,
+          connect = {
+            host = dbg.host or default_adapter_cfg.host,
+            port = dbg.port or default_adapter_cfg.port,
           },
-        },
-      } }
+          pathMappings = {
+            {
+              localRoot = "${workspaceFolder}",
+              remoteRoot = ".",
+            },
+          },
+        } }
       return nil
     end
   end
