@@ -18,7 +18,7 @@ return {
       dapui.close()
     end
 
-    require("debaggers.cpp")(dap)
+    require("debaggers.gdb")(dap)
     require("debaggers.python")(dap)
   end,
 }
