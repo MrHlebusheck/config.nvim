@@ -28,6 +28,12 @@ local default_cfg = {
 
 
 return function(dap)
+  dap.adapters.python = function(cb)
+    cb(default_adapter_cfg)
+  end
+
+  dap.configurations.python = { default_cfg }
+
   if config_dir.available and config_dir.is_file(cfg_path) then
     local cfg = config_dir.read_json(cfg_path)
     local dbg = cfg.debugger
@@ -75,13 +81,6 @@ return function(dap)
             },
           },
         } }
-      return nil
     end
   end
-
-  dap.adapters.python = function(cb)
-    cb(default_adapter_cfg)
-  end
-
-  dap.configurations.python = { default_cfg }
 end
