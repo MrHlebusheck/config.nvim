@@ -21,5 +21,6 @@ return {
     require("debaggers.gdb")(dap)
     require("debaggers.python")(dap)
     require("debaggers.node")(dap)
+    require("debaggers.go")(dap)
   end,
 }
