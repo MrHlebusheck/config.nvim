@@ -56,5 +56,6 @@ return {
     opts = {},
     event = "InsertEnter",
     lazy = true
-  }
+  },
+  { 'rafcamlet/nvim-luapad', dependencies = "antoinemadec/FixCursorHold.nvim" }
 }
