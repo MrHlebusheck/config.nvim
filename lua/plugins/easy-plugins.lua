@@ -1,5 +1,10 @@
 return {
   {
+    'simrat39/symbols-outline.nvim',
+    event = "VeryLazy",
+    config = true
+  },
+  {
     'windwp/nvim-ts-autotag',
     event = "InsertEnter",
     config = true

@@ -41,6 +41,7 @@ map('n', '<leader>ld', ':lua vim.lsp.buf.definition()<cr>', hide)
 map('n', '<leader>lr', ':lua vim.lsp.buf.references()<cr>', hide)
 map('n', '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', hide)
 map('n', '<leader>lt', ':Trouble diagnostics toggle<cr>', hide)
+map('n', '<leader>so', ':SymbolsOutline<cr>', hide)
 
 map('n', '<leader>cp', ':CccPick<cr>', hide)
 
