@@ -5,7 +5,6 @@ return {
     "mason-org/mason-lspconfig.nvim",
   },
   config = function()
-    local lspconfig = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     require("mason").setup()
     local mason_lspconfig = require("mason-lspconfig")
@@ -74,7 +73,8 @@ return {
         }
       end
 
-      lspconfig[server].setup(opts)
+      vim.lsp.enable(server)
+      vim.lsp.config(server, opts)
     end
 
 
