@@ -29,6 +29,9 @@ return {
           title = 'Neo-tree Preview',
         },
       },
+    },
+    filesystem = {
+      follow_current_file = { enabled = true }
     }
   },
   cmd = "Neotree",
