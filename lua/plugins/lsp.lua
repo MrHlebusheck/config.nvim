@@ -49,8 +49,9 @@ return {
               plugins = {
                 isort = { enabled = true },
                 autopep8 = { enabled = true },
-                flake8 = { enabled = true },
-                -- pydocstyle = { enabled = true, ignore = {"D100", "D103"} },
+                flake8 = { enabled = true, ignore = {"E501"} },
+                pydocstyle = { enabled = true, ignore = {"D100", "D103", "D101", "D102", "E501"} },
+                pycodestyle = { enabled = true, ignore = {"E501"}},
                 pylint = { enabled = true, args = "--errors-only" },
                 rope_autoimport = {
                   enabled = true,
