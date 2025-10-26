@@ -62,3 +62,5 @@ map('n', '<F8>', ":DapTerminate<cr>", hide)
 map('n', 'zR', require('ufo').openAllFolds, hide)
 map('n', 'zM', require('ufo').closeAllFolds, hide)
 map('n', '<leader>db', ":DBUIToggle<cr>", hide)
+
+map('n', '<F10>', '<cmd> lua toggleterm_run_code()<cr>', hide)

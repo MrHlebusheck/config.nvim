@@ -34,13 +34,6 @@ return {
     lazy = true
   },
   {
-    'akinsho/toggleterm.nvim',
-    version = "*",
-    config = true,
-    lazy = true,
-    cmd = "ToggleTerm"
-  },
-  {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
