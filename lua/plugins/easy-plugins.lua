@@ -1,5 +1,9 @@
 return {
   {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+  },
+  {
     'simrat39/symbols-outline.nvim',
     event = "VeryLazy",
     config = true
