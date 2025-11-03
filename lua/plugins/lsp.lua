@@ -1,3 +1,12 @@
+function in_array(array, value)
+  for i, v in ipairs(array) do
+    if v == value then
+      return true
+    end
+  end
+  return false
+end
+
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
@@ -14,7 +23,25 @@ return {
       lineFoldingOnly = true
     }
 
-    for i, server in ipairs(mason_lspconfig.get_installed_servers()) do
+    servers = mason_lspconfig.get_installed_servers()
+
+    if not in_array(servers, "clangd") then
+      if vim.fn.executable("clangd") == 1 then
+        servers[#servers + 1] = "clangd"
+      end
+    end
+    if not in_array(servers, "lua_ls") then
+      if vim.fn.executable("lua-language-server") == 1 then
+        servers[#servers + 1] = "lua_ls"
+      end
+    end
+    if not in_array(servers, "rust_analyzer") then
+      if vim.fn.executable("rust-analyzer") == 1 then
+        servers[#servers + 1] = "rust_analyzer"
+      end
+    end
+
+    for i, server in ipairs(servers) do
       local opts = {
         capabilities = capabilities
       }
@@ -49,9 +76,9 @@ return {
               plugins = {
                 isort = { enabled = true },
                 autopep8 = { enabled = true },
-                flake8 = { enabled = true, ignore = {"E501"} },
-                pydocstyle = { enabled = true, ignore = {"D100", "D103", "D101", "D102", "E501"} },
-                pycodestyle = { enabled = true, ignore = {"E501"}},
+                flake8 = { enabled = true, ignore = { "E501" } },
+                pydocstyle = { enabled = true, ignore = { "D100", "D103", "D101", "D102", "E501" } },
+                pycodestyle = { enabled = true, ignore = { "E501" } },
                 pylint = { enabled = true, args = "--errors-only" },
                 rope_autoimport = {
                   enabled = true,
