@@ -1,0 +1,8 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "in_array",
+        "servers",
+        "toggleterm_run_code"
+    ]
+}

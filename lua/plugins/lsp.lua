@@ -1,5 +1,5 @@
 function in_array(array, value)
-  for i, v in ipairs(array) do
+  for _, v in ipairs(array) do
     if v == value then
       return true
     end
@@ -41,7 +41,7 @@ return {
       end
     end
 
-    for i, server in ipairs(servers) do
+    for _, server in ipairs(servers) do
       local opts = {
         capabilities = capabilities
       }
