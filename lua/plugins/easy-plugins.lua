@@ -6,11 +6,13 @@ return {
   {
     'simrat39/symbols-outline.nvim',
     event = "VeryLazy",
+    lazy = true,
     config = true
   },
   {
     'windwp/nvim-ts-autotag',
     event = "InsertEnter",
+    lazy = true,
     config = true
   },
   {
@@ -59,5 +61,9 @@ return {
     event = "InsertEnter",
     lazy = true
   },
-  { 'rafcamlet/nvim-luapad', dependencies = "antoinemadec/FixCursorHold.nvim" }
+  {
+    'rafcamlet/nvim-luapad',
+    lazy = true,
+    cmd = { "Luapad" }
+  }
 }

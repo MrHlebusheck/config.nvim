@@ -27,4 +27,5 @@ return {
     vim.opt.listchars:append("tab:→ ")
     vim.opt.listchars:append("trail:•")
   end,
+  lazy = true,
 }
