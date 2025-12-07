@@ -4,12 +4,6 @@ return {
     lazy = false,
   },
   {
-    'simrat39/symbols-outline.nvim',
-    event = "VeryLazy",
-    lazy = true,
-    config = true
-  },
-  {
     'windwp/nvim-ts-autotag',
     event = "InsertEnter",
     lazy = true,

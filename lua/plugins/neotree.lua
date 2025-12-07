@@ -12,13 +12,11 @@ return {
       position = "left",
       width = 30,
       source = {
-        "filesystem",
-        "buffers",
-        "git_status"
+        "filesystem"
       }
     },
     source_selector = {
-      winbar = true,
+      winbar = true
     },
     mappings = {
       ["P"] = {
@@ -26,7 +24,7 @@ return {
         config = {
           use_float = true,
           use_image_nvim = false,
-          title = 'Neo-tree Preview',
+          title = 'Neo-tree Preview'
         },
       },
     },
