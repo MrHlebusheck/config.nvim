@@ -11,7 +11,6 @@ return {
     'hrsh7th/cmp-latex-symbols',
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'onsails/lspkind.nvim',
-    require('plugins.luasnip-plugin')
   },
   lazy = true,
   event = { "InsertEnter", "CmdlineEnter" },
@@ -24,12 +23,6 @@ return {
         format = lspkind.cmp_format({
           mode = 'symbol',
         })
-      },
-
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end
       },
 
       window = {
@@ -50,7 +43,6 @@ return {
 
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'luasnip' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'buffer' },
         { name = 'path' },
