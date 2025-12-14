@@ -35,6 +35,11 @@ return {
         servers[#servers + 1] = "lua_ls"
       end
     end
+    if not in_array(servers, "rust_analyzer") then
+      if vim.fn.executable("rust-analyzer") == 1 then
+        servers[#servers + 1] = "rust_analyzer"
+      end
+    end
 
     for _, server in ipairs(servers) do
       local opts = {
