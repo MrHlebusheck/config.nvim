@@ -4,9 +4,6 @@ local hide = { noremap = true, silent = true }
 map('n', '<leader>w', ':<ESC>:w<cr>', hide)
 map('n', '<leader>q', ':q<cr>', hide)
 
-map('n', '<C-A-v>', ':vsplit<cr>', hide)
-map('n', '<C-A-h>', ':split<cr>', hide)
-
 map('n', '<C-h>', '<C-W>h', hide)
 map('n', '<C-j>', '<C-W>j', hide)
 map('n', '<C-k>', '<C-W>k', hide)
@@ -24,8 +21,8 @@ map('n', '<leader>e', ':Neotree left<cr>', hide)
 map('n', '<leader>o', ':Neotree toggle<cr>', hide)
 map('n', '<leader>fe', ':Neotree float<cr>', hide)
 
-map('n', '<A-[>', ':BufferLineCyclePrev<cr>', hide)
-map('n', '<A-]>', ':BufferLineCycleNext<cr>', hide)
+map('n', '<leader>[', ':BufferLineCyclePrev<cr>', hide)
+map('n', '<leader>]', ':BufferLineCycleNext<cr>', hide)
 map('n', '<leader>bp', ':BufferLinePick<cr>', hide)
 map('n', '<leader>bc', ':BufferLinePickClose<cr>', hide)
 
@@ -41,7 +38,6 @@ map('n', '<leader>ld', ':lua vim.lsp.buf.definition()<cr>', hide)
 map('n', '<leader>lr', ':lua vim.lsp.buf.references()<cr>', hide)
 map('n', '<leader>la', ':lua vim.lsp.buf.code_action()<cr>', hide)
 map('n', '<leader>lt', ':Trouble diagnostics toggle<cr>', hide)
-map('n', '<leader>so', ':SymbolsOutline<cr>', hide)
 
 map('n', '<leader>cp', ':CccPick<cr>', hide)
 
@@ -52,12 +48,6 @@ map('n', '<leader>nn', ':lua vim.wo.relativenumber = not vim.wo.relativenumber<c
 map('t', '<esc>', [[<C-\><C-n>]], hide)
 map('t', 'jk', [[<C-\><C-n>]], hide)
 map('n', '<leader>tt', ":ToggleTerm direction=float<cr>", hide)
-
-map('n', '<leader>bb', ":DapToggleBreakpoint<cr>", hide)
-map('n', '<F5>', ":DapContinue<cr>", hide)
-map('n', '<F6>', ":DapStepInto<cr>", hide)
-map('n', '<F7>', ":DapStepOver<cr>", hide)
-map('n', '<F8>', ":DapTerminate<cr>", hide)
 
 map('n', 'zR', require('ufo').openAllFolds, hide)
 map('n', 'zM', require('ufo').closeAllFolds, hide)
