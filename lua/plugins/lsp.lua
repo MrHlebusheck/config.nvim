@@ -108,8 +108,8 @@ return {
         }
       end
 
-      vim.lsp.enable(server)
       vim.lsp.config(server, opts)
+      vim.lsp.enable(server)
     end
 
 
