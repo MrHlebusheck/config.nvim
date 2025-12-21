@@ -18,7 +18,7 @@ vim.opt.ignorecase = true
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 5
 vim.opt.mouse = "a"
-vim.wo.wrap = true
+vim.wo.wrap = false
 vim.wo.linebreak = true
 vim.wo.number = true
 vim.opt.cursorline = true
@@ -35,6 +35,7 @@ vim.bo.expandtab = true
 vim.opt.shortmess:append("c")
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.o.colorcolumn = "100,120"
 
 vim.o.foldcolumn = '0'
 vim.o.foldlevel = 99
