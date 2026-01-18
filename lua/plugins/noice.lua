@@ -3,7 +3,8 @@ return {
   event = "VeryLazy",
   lazy = true,
   opts = {
-    lsp = { progress = { enabled = false } }
+    lsp = { progress = { enabled = false } },
+    cmdline = {view = "cmdline"}
   },
   dependencies = {
     "MunifTanjim/nui.nvim",
