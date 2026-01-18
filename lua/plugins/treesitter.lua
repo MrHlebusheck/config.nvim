@@ -1,5 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  branch = "master",
   dependencies = {
     'hiphish/rainbow-delimiters.nvim',
     {
@@ -70,6 +71,6 @@ return {
     "TSUpdate",
     "TSUpdateSync",
   },
-  lazy = true,
+  lazy = false,
   event = "BufEnter",
 }
