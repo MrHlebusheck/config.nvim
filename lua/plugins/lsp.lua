@@ -98,7 +98,7 @@ return {
             "clangd",
             "--background-index",
             "--query-driver=/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
-            "--clang-tidy",
+            -- "--clang-tidy",
             "--all-scopes-completion",
             "--completion-style=detailed",
             "--header-insertion-decorators",
